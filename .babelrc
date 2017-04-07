@@ -4,6 +4,7 @@
     ["babel-plugin-module-resolver", {
       "alias": {
         "app": "./src/scripts/app/",
+        "styles": "./src/styles/"
       }
     }]
   ]
