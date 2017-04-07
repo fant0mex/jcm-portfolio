@@ -1,8 +1,9 @@
 {
-  "name": "pwa",
+  "name": "jcm-portfolio",
   "private": true,
   "license": "MIT",
   "devDependencies": {
+    "aphrodite": "^1.2.0",
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.2",
     "babel-preset-react": "^6.23.0",
