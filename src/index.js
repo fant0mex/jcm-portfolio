@@ -1,5 +1,5 @@
 import React from 'react'
 import { render } from 'react-dom'
-import App from './App'
+import Homepage from 'app/pages/landing/Homepage'
 
-render(<App />, document.getElementById('app'))
+render(<Homepage />, document.getElementById('app'))
