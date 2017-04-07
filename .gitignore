@@ -1,0 +1,21 @@
+# npm dependencies
+node_modules
+
+# generated files
+/public
+/stats
+pid.txt
+
+# system files
+*.log
+.DS_Store
+
+# PhpStorm #
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
+
+*.iml
+
+# Directory-based project format:
+.idea/
+
+reports
