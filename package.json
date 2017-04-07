@@ -23,6 +23,7 @@
   },
   "scripts": {
     "start": "webpack-dashboard -- webpack-dev-server",
-    "test": "jest"
+    "test": "jest",
+    "lint": "standard --fix"
   }
 }

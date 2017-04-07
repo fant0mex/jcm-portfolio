@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
-import Homepage from 'app/pages/landing/Homepage'
+import App from 'app/App'
 import 'styles/style.css'
 
-render(<Homepage />, document.getElementById('app'))
+render(<App />, document.getElementById('app'))
