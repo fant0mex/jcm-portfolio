@@ -3,17 +3,37 @@ import {
   Route,
   Switch
 } from 'react-router-dom'
+import Blog from 'app/components/Blog'
+import NotFound from 'app/components/NotFound'
 
-const Routes = () => (
-  <Switch>
-    <Route exact path='/' component={Home} />
-    <Route path='/reel' component={Reel} />
-    <Route path='/projects' component={Projects} />
-    <Route path='/photography' component={Photography} />
-    <Route path='/blog' component={Blog} />
-    <Route path='/contact' component={Contact} />
-  </Switch>
-)
+const renderMergedProps = (component, ...rest) => {
+  const finalProps = Object.assign({}, ...rest)
+  return (
+    React.createElement(component, finalProps)
+  )
+}
+
+const PropsRoute = ({ component, ...rest }) => {
+  return (
+    <Route {...rest} render={routeProps => {
+      return renderMergedProps(component, routeProps, rest)
+    }} />
+  )
+}
+
+const Routes = (props) => {
+  return (
+    <Switch>
+      <Route exact path='/' component={Home} />
+      <Route path='/reel' component={Reel} />
+      <Route path='/projects' component={Projects} />
+      <Route path='/photography' component={Photography} />
+      <PropsRoute path='/blog' component={Blog} {...props} />
+      <Route path='/contact' component={Contact} />
+      <Route component={NotFound} />
+    </Switch>
+  )
+}
 
 const Home = () => (
   <div>
@@ -36,12 +56,6 @@ const Projects = () => (
 const Photography = () => (
   <div>
     <h2>Photography</h2>
-  </div>
-)
-
-const Blog = () => (
-  <div>
-    <h2>Blog</h2>
   </div>
 )
 

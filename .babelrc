@@ -4,8 +4,18 @@
     ["babel-plugin-module-resolver", {
       "alias": {
         "app": "./src/scripts/app/",
+        "lib": "./src/scripts/lib/",
         "styles": "./src/styles/"
       }
     }]
-  ]
+  ],
+  "presets": [
+    ["babel-preset-env", {
+      "modules": false,
+      "loose": true,
+      "targets": {"browsers": ["last 2 versions", "> 1%"]}
+    }],
+    "babel-preset-react",
+    "babel-preset-stage-2"
+  ],
 }
