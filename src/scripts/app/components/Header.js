@@ -1,16 +1,16 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { StyleSheet, css } from 'aphrodite/no-important'
 
 const Header = () => (
   <nav>
     <ul className={css(styles.list)}>
-      <li><Link to='/'>Home</Link></li>
-      <li><Link to='/reel'>Reel</Link></li>
-      <li><Link to='/projects'>Projects</Link></li>
-      <li><Link to='/photography'>Photography</Link></li>
-      <li><Link to='/blog'>Blog</Link></li>
-      <li><Link to='/contact'>Contact</Link></li>
+      <li><NavLink activeStyle={{color: 'green'}} to='/'>Home</NavLink></li>
+      <li><NavLink activeStyle={{color: 'green'}} to='/reel'>Reel</NavLink></li>
+      <li><NavLink activeStyle={{color: 'green'}} to='/projects'>Projects</NavLink></li>
+      <li><NavLink activeStyle={{color: 'green'}} to='/photography'>Photography</NavLink></li>
+      <li><NavLink activeStyle={{color: 'green'}} to='/blog'>Blog</NavLink></li>
+      <li><NavLink activeStyle={{color: 'green'}} to='/contact'>Contact</NavLink></li>
     </ul>
     <hr />
   </nav>

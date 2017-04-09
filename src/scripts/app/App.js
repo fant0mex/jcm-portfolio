@@ -10,18 +10,16 @@ class App extends Component {
     posts: []
   }
 
-  getAllBlogPosts = (page) => {
-    getAllBlogPosts(page).then(({posts, ...data}) => {
-      this.setState((prevState) => ({posts: prevState.posts.concat(posts), ...data}))
-    }, () => {
-      console.log('got posts')
+  getBlogPosts = (page) => {
+    getAllBlogPosts(page).then(data => {
+      this.setState({posts: data})
     })
   }
 
   render () {
     const propsToPass = {
       appState: this.state,
-      getAllBlogPosts
+      getBlogPosts: this.getBlogPosts
     }
     return (
       <Router>

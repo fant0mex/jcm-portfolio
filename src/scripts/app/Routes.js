@@ -4,6 +4,7 @@ import {
   Switch
 } from 'react-router-dom'
 import Blog from 'app/components/Blog'
+import BlogPost from 'app/components/BlogPost'
 import NotFound from 'app/components/NotFound'
 
 const renderMergedProps = (component, ...rest) => {
@@ -28,7 +29,11 @@ const Routes = (props) => {
       <Route path='/reel' component={Reel} />
       <Route path='/projects' component={Projects} />
       <Route path='/photography' component={Photography} />
-      <PropsRoute path='/blog' component={Blog} {...props} />
+      <PropsRoute exact path='/blog' component={Blog} {...props} />
+      <Route path='/blog/:slug' render={({match}) => {
+        const post = props.appState.posts.find(post => match.params.slug === post.slug)
+        return <BlogPost post={post} />
+      }} />
       <Route path='/contact' component={Contact} />
       <Route component={NotFound} />
     </Switch>

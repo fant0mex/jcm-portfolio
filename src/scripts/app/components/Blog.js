@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import BlogSnippet from 'app/components/BlogSnippet'
 
 class Blog extends Component {
   state = {
@@ -6,7 +7,7 @@ class Blog extends Component {
   }
 
   componentDidMount () {
-    // this.props.getAllBlogPosts()
+    this.props.getBlogPosts()
   }
 
   componentWillReceiveProps (newProps) {
@@ -18,9 +19,13 @@ class Blog extends Component {
   }
 
   render () {
+    const { posts } = this.state
     return (
       <div>
         <h2>Blog</h2>
+        {posts.map(blogSnippet => (
+          <BlogSnippet key={blogSnippet.slug} post={blogSnippet} />
+        ))}
       </div>
     )
   }
