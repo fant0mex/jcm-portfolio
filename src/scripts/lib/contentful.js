@@ -1,8 +1,8 @@
 import axios from 'axios'
 import { generateItemObjectArray, generateItemObject } from 'contentful-response-parser'
 
-const spaceId = `we4yhyd6uzsm`
-const accessToken = `0b5f0c65cef31feb9dafa2010cc916fbefe54dacbbba8890adca1f9e097eefc7`
+const spaceId = `hmm6b9uhtnq1`
+const accessToken = `557250e8a53605db3ca200874c38124a3d0cffdcb3d289c7c6a3230312fa3082`
 
 const contenfulAPI = axios.create({
   method: 'get',
