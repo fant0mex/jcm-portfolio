@@ -22,7 +22,7 @@ const PropsRoute = ({ component, ...rest }) => {
   )
 }
 
-const Routes = (props) => {
+const Routes = props => {
   return (
     <Switch>
       <Route exact path='/' component={Home} />
@@ -30,10 +30,7 @@ const Routes = (props) => {
       <Route path='/projects' component={Projects} />
       <Route path='/photography' component={Photography} />
       <PropsRoute exact path='/blog' component={Blog} {...props} />
-      <Route path='/blog/:slug' render={({match}) => {
-        const post = props.appState.posts.find(post => match.params.slug === post.slug)
-        return <BlogPost post={post} />
-      }} />
+      <PropsRoute path='/blog/:slug' component={BlogPost} {...props} />
       <Route path='/contact' component={Contact} />
       <Route component={NotFound} />
     </Switch>

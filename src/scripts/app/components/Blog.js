@@ -2,24 +2,13 @@ import React, { Component } from 'react'
 import BlogSnippet from 'app/components/BlogSnippet'
 
 class Blog extends Component {
-  state = {
-    posts: []
-  }
-
   componentDidMount () {
     this.props.getBlogPosts()
   }
 
-  componentWillReceiveProps (newProps) {
-    if (this.props.appState.posts !== newProps.appState.posts) {
-      this.setState({
-        posts: newProps.appState.posts
-      })
-    }
-  }
-
   render () {
-    const { posts } = this.state
+    const { posts } = this.props.appState
+    if (posts.length === 0) return null
     return (
       <div>
         <h2>Blog</h2>

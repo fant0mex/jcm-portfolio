@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { StyleSheet, css } from 'aphrodite/no-important'
+import styleVars from 'styles/variables'
 
 const Header = () => (
   <nav>
@@ -21,7 +22,11 @@ export default Header
 const styles = StyleSheet.create({
   list: {
     display: 'flex',
+    flexDirection: 'column',
     justifyContent: 'space-between',
-    padding: '1rem 1rem 0'
+    padding: '1rem 1rem 0',
+    [styleVars.media.sm]: {
+      flexDirection: 'row'
+    }
   }
 })
