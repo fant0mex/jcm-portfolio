@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'space-between',
     padding: '1rem 1rem 0',
+    fontFamily: styleVars.font.Palanquin,
     [styleVars.media.sm]: {
       flexDirection: 'row'
     }

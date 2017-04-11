@@ -1,3 +1,10 @@
+const Palanquin = {
+  fontFamily: 'Palanquin',
+  fontStyle: 'normal',
+  fontWeight: 'normal',
+  src: `url('src/assets/fonts/palanquin-regular.woff') format('woff')`
+}
+
 const width = {
   sm: 544,
   md: 768,
@@ -6,6 +13,9 @@ const width = {
 }
 
 export default {
+  font: {
+    Palanquin: Palanquin
+  },
   width: width,
 
   media: {

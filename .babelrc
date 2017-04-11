@@ -5,7 +5,8 @@
       "alias": {
         "app": "./src/scripts/app/",
         "lib": "./src/scripts/lib/",
-        "styles": "./src/styles/"
+        "styles": "./src/styles/",
+        "assets": "./src/assets/"
       }
     }]
   ],

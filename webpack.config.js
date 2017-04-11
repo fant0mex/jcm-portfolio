@@ -35,7 +35,12 @@ module.exports = {
             options: {minimize: true}
           }
         ]
-      }]
+      },
+      {
+        test: /\.(gif|png|woff|woff2|eot|ttf|svg)$/,
+        loader: 'url-loader?limit=10000'
+      }
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin({
