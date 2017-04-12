@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { StyleSheet, css } from 'aphrodite/no-important'
 
 const BlogSnippet = props => (
   <div>
@@ -8,10 +9,18 @@ const BlogSnippet = props => (
         <div>{props.post.category && props.post.category.title}</div>
       </div>
       <div>
-        <h2>{props.post.title}</h2>
+        <h2 className={css(styles.postTitle)} >{props.post.title}</h2>
       </div>
     </Link>
+    <hr />
   </div>
 )
 
 export default BlogSnippet
+
+const styles = StyleSheet.create({
+  postTitle: {
+    fontSize: '1.2em',
+    textAlign: 'center'
+  }
+})
