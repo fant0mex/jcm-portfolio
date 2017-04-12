@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
 import BlogSnippet from 'app/components/BlogSnippet'
-<<<<<<< HEAD
 import { StyleSheet, css } from 'aphrodite/no-important'
 import styleVars from 'styles/variables'
-=======
 import fakeBlogPosts from 'data/fakeBlogPosts'
->>>>>>> e398c41c9f95366216dbb2c6743cbf6b0da79334
 
 class Blog extends Component {
   componentDidMount () {
