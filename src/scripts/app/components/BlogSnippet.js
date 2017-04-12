@@ -4,14 +4,12 @@ import { StyleSheet, css } from 'aphrodite/no-important'
 
 const BlogSnippet = props => (
   <div>
-    <Link to={`/blog/${props.post.slug}`}>
-      <div style={{backgroundImage: `url(${props.post.featuredImage.url})`}}>
-        <div>{props.post.category && props.post.category.title}</div>
-      </div>
-      <div>
-        <h2 className={css(styles.postTitle)} >{props.post.title}</h2>
-      </div>
-    </Link>
+    <div style={{backgroundImage: `url(${props.post.featuredImage.url})`}}>
+      <div>{props.post.category && props.post.category.title}</div>
+    </div>
+    <div>
+      <h2 className={css(styles.postTitle)} >{props.post.title}</h2>
+    </div>
     <hr />
   </div>
 )

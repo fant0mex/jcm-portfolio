@@ -1,21 +1,23 @@
 import React, { Component } from 'react'
 import BlogSnippet from 'app/components/BlogSnippet'
+<<<<<<< HEAD
 import { StyleSheet, css } from 'aphrodite/no-important'
 import styleVars from 'styles/variables'
+=======
+import fakeBlogPosts from 'data/fakeBlogPosts'
+>>>>>>> e398c41c9f95366216dbb2c6743cbf6b0da79334
 
 class Blog extends Component {
   componentDidMount () {
-    this.props.getBlogPosts()
+    console.log('fakePosts ', fakeBlogPosts)
   }
 
   render () {
-    const { posts } = this.props.appState
-    if (posts.length === 0) return null
     return (
       <div>
         <h2 className={css(styles.h2)}>Blog</h2>
         <div className={css(styles.blogList)}>
-          {posts.map(blogSnippet => (
+          {fakeBlogPosts.map(blogSnippet => (
             <BlogSnippet key={blogSnippet.slug} post={blogSnippet} />
           ))}
         </div>
