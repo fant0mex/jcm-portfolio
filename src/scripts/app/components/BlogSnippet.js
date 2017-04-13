@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { StyleSheet, css } from 'aphrodite/no-important'
 
 const BlogSnippet = props => (
