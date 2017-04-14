@@ -5,6 +5,7 @@ import { StyleSheet, css } from 'aphrodite/no-important'
 const InstagramWidget = props => (
   <div className={css(styles.instaWidget)}>
     <h2>Instagram Widget</h2>
+    <img src={props.profilePic} />
     {props.images.map((image, index) => (
       <img key={index} src={image.url} />
     ))}
@@ -14,7 +15,8 @@ const InstagramWidget = props => (
 export default InstagramWidget
 
 InstagramWidget.propTypes = {
-  images: PropTypes.array.isRequired
+  images: PropTypes.array.isRequired,
+  profilePic: PropTypes.string.isRequired
 }
 
 const styles = StyleSheet.create({
