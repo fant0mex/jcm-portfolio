@@ -7,7 +7,8 @@ import fakeBlogPosts from 'data/fakeBlogPosts'
 
 class Blog extends Component {
   state = {
-    instagramFeed: []
+    instagramFeed: [],
+    profilePicUrl: ''
   }
 
   componentDidMount () {
@@ -19,14 +20,18 @@ class Blog extends Component {
       method: 'get'
     }).then(response => {
       response.json().then(data => {
+        const profilePicUrl = data.items[0].user.profile_picture.replace('s150x150/', '')
         const instagramFeed = data.items.map(item => item.images.standard_resolution)
-        this.setState({ instagramFeed })
+        this.setState({
+          instagramFeed,
+          profilePicUrl
+        })
       })
     })
   }
 
   render () {
-    const { instagramFeed } = this.state
+    const { instagramFeed, profilePicUrl } = this.state
     return (
       <div className={css(styles.blogWrapper)}>
         <div className={css(styles.blogList)}>
@@ -34,7 +39,7 @@ class Blog extends Component {
             <BlogSnippet key={blogSnippet.slug} post={blogSnippet} />
           ))}
         </div>
-        <InstagramWidget images={instagramFeed} />
+        <InstagramWidget profilePic={profilePicUrl} images={instagramFeed} />
       </div>
     )
   }
