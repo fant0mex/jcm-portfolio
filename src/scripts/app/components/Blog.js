@@ -6,11 +6,27 @@ import styleVars from 'styles/variables'
 import fakeBlogPosts from 'data/fakeBlogPosts'
 
 class Blog extends Component {
+  state = {
+    instagramFeed: []
+  }
+
   componentDidMount () {
-    console.log('fakePosts ', fakeBlogPosts)
+    this.getInstagram()
+  }
+
+  getInstagram = () => {
+    window.fetch('https://crossorigin.me/https://www.instagram.com/Jamesm402/media/', {
+      method: 'get'
+    }).then(response => {
+      response.json().then(data => {
+        const instagramFeed = data.items.map(item => item.images.standard_resolution)
+        this.setState({ instagramFeed })
+      })
+    })
   }
 
   render () {
+    const { instagramFeed } = this.state
     return (
       <div className={css(styles.blogWrapper)}>
         <div className={css(styles.blogList)}>
@@ -18,7 +34,7 @@ class Blog extends Component {
             <BlogSnippet key={blogSnippet.slug} post={blogSnippet} />
           ))}
         </div>
-        <InstagramWidget />
+        <InstagramWidget images={instagramFeed} />
       </div>
     )
   }

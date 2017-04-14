@@ -1,13 +1,21 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { StyleSheet, css } from 'aphrodite/no-important'
 
 const InstagramWidget = props => (
   <div className={css(styles.instaWidget)}>
     <h2>Instagram Widget</h2>
+    {props.images.map((image, index) => (
+      <img key={index} src={image.url} />
+    ))}
   </div>
 )
 
 export default InstagramWidget
+
+InstagramWidget.propTypes = {
+  images: PropTypes.array.isRequired
+}
 
 const styles = StyleSheet.create({
   instaWidget: {
