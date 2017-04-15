@@ -10,7 +10,7 @@ const InstagramWidget = props => (
       <div key={index} className={css(styles.instaImgWrapper)}>
         <img src={image.url} className={css(styles.instaImg)} />
       </div>
-    )).slice(0, 6)}
+    ))}
   </div>
 )
 

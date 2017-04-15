@@ -21,7 +21,7 @@ class Blog extends Component {
     }).then(response => {
       response.json().then(data => {
         const profilePicUrl = data.items[0].user.profile_picture.replace('s150x150/', '')
-        const instagramFeed = data.items.map(item => item.images.standard_resolution)
+        const instagramFeed = data.items.map(item => item.images.standard_resolution).filter((item, index) => index < 6)
         this.setState({
           instagramFeed,
           profilePicUrl
