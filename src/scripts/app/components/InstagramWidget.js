@@ -4,8 +4,10 @@ import { StyleSheet, css } from 'aphrodite/no-important'
 
 const InstagramWidget = props => (
   <div className={css(styles.instaWidget)}>
-    <img src={props.profilePic} />
-    <h2 className={css(styles.instaWidgetTitle)}>Instagram</h2>
+    <div className={css(styles.instaWidgetTitle)}>
+      <img className={css(styles.instaProfilePic)} src={props.profilePic} />
+      <h2>Instagram</h2>
+    </div>
     {props.images.map((image, index) => (
       <div key={index} className={css(styles.instaImgWrapper)}>
         <img src={image.url} className={css(styles.instaImg)} />
@@ -32,10 +34,22 @@ const styles = StyleSheet.create({
 
   instaWidgetTitle: {
     width: '100%',
+    display: 'flex',
+    marginBottom: '0.25em',
+    flexFlow: 'row nowrap',
+    justifyContent: 'center',
+    alignItems: 'center',
     fontFamily: 'Palanquin',
     textAlign: 'center',
-    fontSize: '2em',
+    fontSize: '2.5em',
     textTransform: 'uppercase'
+  },
+
+  instaProfilePic: {
+    width: '80px',
+    height: '80px',
+    marginRight: '0.5em',
+    borderRadius: '50%'
   },
 
   instaImgWrapper: {
