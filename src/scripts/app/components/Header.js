@@ -6,16 +6,17 @@ import styleVars from 'styles/variables'
 const Header = () => (
   <header className={css(styles.header)}>
     <div className={css(styles.logo)}>
-      <img src='src/assets/img/jcm-logo.png' />
+      <NavLink to='/'>
+        <img src='src/assets/img/jcm-logo.png' />
+      </NavLink>
     </div>
     <nav className={css(styles.nav)}>
       <ul className={css(styles.list)}>
-        <li className={css(styles.listItem)}><NavLink activeStyle={{color: 'green'}} to='/'>Home</NavLink></li>
-        <li className={css(styles.listItem)}><NavLink activeStyle={{color: 'green'}} to='/reel'>Reel</NavLink></li>
-        <li className={css(styles.listItem)}><NavLink activeStyle={{color: 'green'}} to='/projects'>Projects</NavLink></li>
-        <li className={css(styles.listItem)}><NavLink activeStyle={{color: 'green'}} to='/photography'>Photography</NavLink></li>
-        <li className={css(styles.listItem)}><NavLink activeStyle={{color: 'green'}} to='/blog'>Blog</NavLink></li>
-        <li className={css(styles.listItem)}><NavLink activeStyle={{color: 'green'}} to='/contact'>Contact</NavLink></li>
+        <li><NavLink className={css(styles.listItem)} to='/reel'>Reel</NavLink></li>
+        <li><NavLink className={css(styles.listItem)} to='/projects'>Projects</NavLink></li>
+        <li><NavLink className={css(styles.listItem)} to='/photography'>Photography</NavLink></li>
+        <li><NavLink className={css(styles.listItem)} to='/blog'>Blog</NavLink></li>
+        <li><NavLink className={css(styles.listItem)} to='/contact'>Contact</NavLink></li>
       </ul>
     </nav>
   </header>
@@ -59,13 +60,15 @@ const styles = StyleSheet.create({
     fontFamily: styleVars.font.Palanquin,
     textTransform: 'lowercase',
     textAlign: 'center',
-    fontSize: '1.15em',
+    fontSize: '1.2em',
     [styleVars.media.sm]: {
       flexDirection: 'row'
     }
   },
 
   listItem: {
-    margin: '0 1em'
+    margin: '0 0.5em',
+    padding: '0 0.5em',
+    color: '#000'
   }
 })
