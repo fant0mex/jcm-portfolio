@@ -46,6 +46,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
+      filename: '200.html',
       template: './index.html'
     }),
     new CopyWebpackPlugin([{from: './assets'}]),
