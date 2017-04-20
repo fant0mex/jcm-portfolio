@@ -12,11 +12,11 @@ const Header = () => (
     </div>
     <nav className={css(styles.nav)}>
       <ul className={css(styles.list)}>
-        <li><NavLink className={css(styles.listItem)} to='/reel'>Reel</NavLink></li>
-        <li><NavLink className={css(styles.listItem)} to='/projects'>Projects</NavLink></li>
-        <li><NavLink className={css(styles.listItem)} to='/photography'>Photography</NavLink></li>
-        <li><NavLink className={css(styles.listItem)} to='/blog'>Blog</NavLink></li>
-        <li><NavLink className={css(styles.listItem)} to='/contact'>Contact</NavLink></li>
+        <li><NavLink activeClassName={css(styles.active)} className={css(styles.listItem)} to='/reel'>Reel</NavLink></li>
+        <li><NavLink activeClassName={css(styles.active)} className={css(styles.listItem)} to='/projects'>Projects</NavLink></li>
+        <li><NavLink activeClassName={css(styles.active)} className={css(styles.listItem)} to='/photography'>Photography</NavLink></li>
+        <li><NavLink activeClassName={css(styles.active)} className={css(styles.listItem)} to='/blog'>Blog</NavLink></li>
+        <li><NavLink activeClassName={css(styles.active)} className={css(styles.listItem)} to='/contact'>Contact</NavLink></li>
       </ul>
     </nav>
   </header>
@@ -70,5 +70,9 @@ const styles = StyleSheet.create({
     margin: '0 0.5em',
     padding: '0 0.5em',
     color: '#000'
+  },
+
+  active: {
+    textDecoration: 'underline !important'
   }
 })
