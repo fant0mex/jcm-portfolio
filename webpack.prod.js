@@ -1,27 +1,22 @@
 const { resolve } = require('path')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const DashboardPlugin = require('webpack-dashboard/plugin')
+const webpack = require('webpack')
 
 module.exports = {
   context: resolve(__dirname, 'src'),
-  entry: './index.js',
-  output: {
-    filename: 'bundle.js',
-    publicPath: '/'
+  entry: {
+    app: './index.js',
+    vendor: ['react', 'react-dom', 'react-router-dom', 'aphrodite']
   },
-  devServer: {
-    historyApiFallback: true,
-    port: 4040
+  output: {
+    path: resolve(__dirname, 'dist'),
+    filename: '[name].[chunkhash:6].js',
+    publicPath: '/'
   },
   module: {
     rules: [
-      {
-        enforce: 'pre',
-        test: /\.js$/,
-        loader: 'standard-loader',
-        exclude: /node_modules/
-      },
       {
         test: /\.js$/,
         loader: 'babel-loader',
@@ -43,11 +38,19 @@ module.exports = {
       }
     ]
   },
+  devtool: 'source-map',
+  performance: {
+    hints: 'error',
+    maxEntrypointSize: 300000
+  },
   plugins: [
+    new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       template: './index.html'
     }),
     new CopyWebpackPlugin([{from: './assets'}]),
-    new DashboardPlugin()
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor'
+    })
   ]
 }

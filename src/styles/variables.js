@@ -2,7 +2,7 @@ const Palanquin = {
   fontFamily: 'Palanquin',
   fontStyle: 'normal',
   fontWeight: 'normal',
-  src: `url('src/assets/fonts/palanquin-regular.woff') format('woff')`
+  src: `url('/fonts/palanquin-regular.woff') format('woff')`
 }
 
 const width = {

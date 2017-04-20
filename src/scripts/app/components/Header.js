@@ -1,13 +1,14 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { StyleSheet, css } from 'aphrodite/no-important'
+import Logo from 'assets/img/jcm-logo.png'
 import styleVars from 'styles/variables'
 
 const Header = () => (
   <header className={css(styles.header)}>
     <div className={css(styles.logo)}>
       <NavLink to='/'>
-        <img src='src/assets/img/jcm-logo.png' />
+        <img src={Logo} />
       </NavLink>
     </div>
     <nav className={css(styles.nav)}>
