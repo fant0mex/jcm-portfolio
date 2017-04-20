@@ -4,18 +4,10 @@ import styleVars from 'styles/variables'
 import fakeProjects from 'data/fakeProjects'
 
 class Projects extends Component {
-  componentDidMount () {
-
-  }
-
   render () {
     return (
       <div className={css(styles.projectsWrapper)}>
-        <div className={css(styles.projectsList)}>
-          {fakeProjects.map(project => (
-            <ProjectItem key={project.slug} post={project} />
-          ))}
-        </div>
+        <h2>Projects Page Test</h2>
       </div>
     )
   }
