@@ -8,7 +8,6 @@ class Projects extends Component {
   render () {
     return (
       <div className={css(styles.projectsWrapper)}>
-        <h2>Projects Page Test</h2>
         <div className={css(styles.projectList)}>
           {fakeProjects.map(item => (
             <ProjectItem key={item.slug} post={item} />

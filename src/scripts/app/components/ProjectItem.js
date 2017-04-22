@@ -23,27 +23,37 @@ ProjectItem.propTypes = {
 const styles = StyleSheet.create({
   itemWrapper: {
     position: 'relative',
-    maxWidth: '85%',
+    maxWidth: '95%',
     margin: '1em auto',
+    [styleVars.media.sm]: {
+      maxWidth: '85%'
+    },
     [styleVars.media.lg]: {
       maxWidth: '30em',
       margin: '1em'
+    },
+    ':hover div': {
+      visibility: 'visible',
+      opacity: '1',
+      transitionDelay: '0s'
     }
   },
 
   overlay: {
-    background: 'rgba(30, 159, 191, 0.6)',
-    // visibility: 'hidden',
-    // opacity: '0',
+    background: 'rgba(0, 0, 0, 0.6)',
+    visibility: 'hidden',
+    opacity: '0',
     transition: 'visibility 0s linear 0.5s, opacity 0.3s linear',
     top: '0',
     left: '0',
     width: '100%',
-    height: '100%',
+    height: '98.5%',
     position: 'absolute',
     zIndex: '99',
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    fontSize: '2em',
+    color: '#fff'
   }
 })
