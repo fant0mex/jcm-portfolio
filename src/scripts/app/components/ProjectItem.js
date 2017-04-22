@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import VideoOverlay from 'app/components/VideoOverlay'
 import { StyleSheet, css } from 'aphrodite/no-important'
 import styleVars from 'styles/variables'
 
