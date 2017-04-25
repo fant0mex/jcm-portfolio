@@ -7,6 +7,7 @@ import fakeBlogPosts from 'data/fakeBlogPosts'
 
 class Blog extends Component {
   state = {
+    loading: true,
     instagramFeed: [],
     profilePicUrl: ''
   }
@@ -21,17 +22,21 @@ class Blog extends Component {
     }).then(response => {
       response.json().then(data => {
         const profilePicUrl = data.items[0].user.profile_picture.replace('s150x150/', '')
-        const instagramFeed = data.items.map(item => item.images.standard_resolution).filter((item, index) => index < 6)
+        const instagramFeed = data.items.map(item => ({
+          img: item.images.standard_resolution,
+          link: item.link
+        })).filter((item, index) => index < 6)
         this.setState({
           instagramFeed,
-          profilePicUrl
+          profilePicUrl,
+          loading: false
         })
       })
     })
   }
 
   render () {
-    const { instagramFeed, profilePicUrl } = this.state
+    const { instagramFeed, profilePicUrl, loading } = this.state
     return (
       <div className={css(styles.blogWrapper)}>
         <div className={css(styles.blogList)}>
@@ -39,7 +44,11 @@ class Blog extends Component {
             <BlogSnippet key={blogSnippet.slug} post={blogSnippet} />
           ))}
         </div>
-        <InstagramWidget profilePic={profilePicUrl} images={instagramFeed} />
+        {loading ? (
+          <div>Loading...</div>
+        ) : (
+          <InstagramWidget profilePic={profilePicUrl} feed={instagramFeed} />
+        )}
       </div>
     )
   }
