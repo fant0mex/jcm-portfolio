@@ -1,21 +1,22 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { StyleSheet, css } from 'aphrodite/no-important'
-import styleVars from 'styles/variables'
+// import fakeProjects from 'data/fakeProjects'
 
 const VideoOverlay = props => (
   <div className={css(styles.overlay)}>
-    {video}
+    <iframe
+      src=''
+      width='1280' height='720' frameBorder='0' allowFullScreen='' />
   </div>
 )
 
 export default VideoOverlay
 
-const video = '<iframe id="vimeo-player" src="https://player.vimeo.com/video/210658426?title=0&byline=0&portrait=0&autoplay=1" width="1280" height="720" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
+// const videoSrc = `https://player.vimeo.com/video/${props.vimeoId}?title=0&amp;byline=0&amp;portrait=0`
 
 const styles = StyleSheet.create({
   overlay: {
-    background: 'rgba(0, 0, 0, 0.6)'
+    background: 'rgba(0, 0, 0, 0.6)',
     position: 'absolute',
     left: '0',
     top: '0',

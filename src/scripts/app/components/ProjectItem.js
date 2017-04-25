@@ -11,6 +11,7 @@ const ProjectItem = props => (
       <div className={css(styles.overlay)}>
         <h2>{props.post.title}</h2>
       </div>
+      <VideoOverlay />
     </div>
   </div>
 )
