@@ -5,12 +5,14 @@ import { StyleSheet, css } from 'aphrodite/no-important'
 const InstagramWidget = props => (
   <div className={css(styles.instaWidget)}>
     <div className={css(styles.instaWidgetTitle)}>
-      <img className={css(styles.instaProfilePic)} src={props.profilePic} />
-      <h2>Instagram</h2>
+      <a href='https://www.instagram.com/Jamesm402/' target='_blank'>
+        <img className={css(styles.instaProfilePic)} src={props.profilePic} />
+        <h2>Instagram</h2>
+      </a>
     </div>
-    {props.images.map((image, index) => (
+    {props.feed.map((item, index) => (
       <div key={index} className={css(styles.instaImgWrapper)}>
-        <img src={image.url} className={css(styles.instaImg)} />
+        <a href={item.link} target='_blank'><img src={item.img.url} className={css(styles.instaImg)} /></a>
       </div>
     ))}
   </div>
@@ -19,7 +21,7 @@ const InstagramWidget = props => (
 export default InstagramWidget
 
 InstagramWidget.propTypes = {
-  images: PropTypes.array.isRequired,
+  feed: PropTypes.array.isRequired,
   profilePic: PropTypes.string.isRequired
 }
 
@@ -42,7 +44,12 @@ const styles = StyleSheet.create({
     fontFamily: 'Palanquin',
     textAlign: 'center',
     fontSize: '2.5em',
-    textTransform: 'uppercase'
+    textTransform: 'uppercase',
+    ':not(false) > a': {
+      display: 'flex',
+      alignItems: 'center',
+      color: '#000'
+    }
   },
 
   instaProfilePic: {

@@ -11,7 +11,8 @@ module.exports = {
     publicPath: '/'
   },
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
+    port: 4040
   },
   module: {
     rules: [
