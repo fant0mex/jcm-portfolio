@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom'
 import Blog from 'app/components/Blog'
 import BlogPost from 'app/components/BlogPost'
+import Projects from 'app/components/Projects'
 import NotFound from 'app/components/NotFound'
 
 const renderMergedProps = (component, ...rest) => {
@@ -46,12 +47,6 @@ const Home = () => (
 const Reel = () => (
   <div>
     <h2>Reel</h2>
-  </div>
-)
-
-const Projects = () => (
-  <div>
-    <h2>Projects</h2>
   </div>
 )
 
