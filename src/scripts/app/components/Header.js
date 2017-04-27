@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { StyleSheet, css } from 'aphrodite/no-important'
 import Logo from 'assets/img/jcm-logo.png'
 import styleVars from 'styles/variables'
+import MediaQuery from 'react-responsive'
 
 const Header = () => (
   <header className={css(styles.header)}>
@@ -11,15 +12,20 @@ const Header = () => (
         <img src={Logo} />
       </NavLink>
     </div>
-    <nav className={css(styles.nav)}>
-      <ul className={css(styles.list)}>
-        <li><NavLink activeClassName={css(styles.active)} className={css(styles.listItem)} to='/reel'>Reel</NavLink></li>
-        <li><NavLink activeClassName={css(styles.active)} className={css(styles.listItem)} to='/projects'>Projects</NavLink></li>
-        <li><NavLink activeClassName={css(styles.active)} className={css(styles.listItem)} to='/photography'>Photography</NavLink></li>
-        <li><NavLink activeClassName={css(styles.active)} className={css(styles.listItem)} to='/blog'>Blog</NavLink></li>
-        <li><NavLink activeClassName={css(styles.active)} className={css(styles.listItem)} to='/contact'>Contact</NavLink></li>
-      </ul>
-    </nav>
+    <MediaQuery maxWidth={768}>
+      <div>'Test for hamburger menu'</div>
+    </MediaQuery>
+    <MediaQuery minWidth={769}>
+      <nav className={css(styles.nav)}>
+        <ul className={css(styles.list)}>
+          <li><NavLink activeClassName={css(styles.active)} className={css(styles.listItem)} to='/reel'>Reel</NavLink></li>
+          <li><NavLink activeClassName={css(styles.active)} className={css(styles.listItem)} to='/projects'>Projects</NavLink></li>
+          <li><NavLink activeClassName={css(styles.active)} className={css(styles.listItem)} to='/photography'>Photography</NavLink></li>
+          <li><NavLink activeClassName={css(styles.active)} className={css(styles.listItem)} to='/blog'>Blog</NavLink></li>
+          <li><NavLink activeClassName={css(styles.active)} className={css(styles.listItem)} to='/contact'>Contact</NavLink></li>
+        </ul>
+      </nav>
+    </MediaQuery>
   </header>
 )
 
