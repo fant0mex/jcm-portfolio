@@ -1,20 +1,39 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import VideoOverlay from 'app/components/VideoOverlay'
 import { StyleSheet, css } from 'aphrodite/no-important'
 import styleVars from 'styles/variables'
 
-const ProjectItem = props => (
-  <div>
-    <div className={css(styles.itemWrapper)}>
-      <img src={props.post.featuredImage.url} />
-      <div className={css(styles.overlay)}>
-        <h2>{props.post.title}</h2>
+class ProjectItem extends Component {
+  state = {
+    isOverlayShown: false
+  }
+
+  toggleVideoOverlay () {
+    this.setState(prevState => ({
+      isOverlayShown: !prevState.isOverlayShown
+    }))
+  }
+
+  render () {
+    return (
+      <div className={css(styles.itemWrapper)} onClick={this.toggleVideoOverlay.bind(this)}>
+        <img src={this.props.post.featuredImage.url} />
+        <div className={css(styles.overlay)}>
+          <h2>{this.props.post.title}</h2>
+        </div>
+        {this.state.isOverlayShown ? (
+          <VideoOverlay
+            vimeoId={this.props.post.vimeoId}
+            isOverlayShown={this.state.isOverlayShown}
+          />
+        ) : (
+          <div />
+        )}
       </div>
-      <VideoOverlay />
-    </div>
-  </div>
-)
+    )
+  }
+}
 
 export default ProjectItem
 
@@ -31,7 +50,7 @@ const styles = StyleSheet.create({
       maxWidth: '85%'
     },
     [styleVars.media.lg]: {
-      maxWidth: '30em',
+      maxWidth: '28em',
       margin: '1em'
     },
     ':hover div': {
