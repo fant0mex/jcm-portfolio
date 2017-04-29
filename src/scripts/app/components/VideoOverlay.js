@@ -19,7 +19,7 @@ export default VideoOverlay
 
 const styles = StyleSheet.create({
   overlay: {
-    background: 'rgba(0, 0, 0, 0.6)',
+    background: 'rgba(0, 0, 0, 0.8)',
     position: 'fixed',
     left: '0',
     top: '0',
