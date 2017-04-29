@@ -13,7 +13,7 @@ const Header = () => (
         <img src={Logo} />
       </NavLink>
     </div>
-    <MediaQuery maxWidth={768}>
+    <MediaQuery maxWidth={styleVars.width.md - 1}>
       <Menu styles={burger} isOpen={false} right>
         <nav className={css(styles.nav)}>
           <ul className={css(styles.list)}>
@@ -26,7 +26,7 @@ const Header = () => (
         </nav>
       </Menu>
     </MediaQuery>
-    <MediaQuery minWidth={769}>
+    <MediaQuery minWidth={styleVars.width.md}>
       <nav className={css(styles.nav)}>
         <ul className={css(styles.list)}>
           <li><NavLink activeClassName={css(styles.active)} className={css(styles.listItem)} to='/reel'>Reel</NavLink></li>
