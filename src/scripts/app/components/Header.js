@@ -44,7 +44,7 @@ export default Header
 
 const burger = {
   bmBurgerButton: {
-    position: 'fixed',
+    position: 'absolute',
     width: '30px',
     height: '22px',
     right: '26px',

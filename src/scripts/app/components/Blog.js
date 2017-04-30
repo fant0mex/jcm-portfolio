@@ -45,7 +45,9 @@ class Blog extends Component {
           ))}
         </div>
         {loading ? (
-          <div>Loading...</div>
+          <div className={css(styles.loaderWrapper)}>
+            <div className={css(styles.loader)} />
+          </div>
         ) : (
           <InstagramWidget profilePic={profilePicUrl} feed={instagramFeed} />
         )}
@@ -55,6 +57,15 @@ class Blog extends Component {
 }
 
 export default Blog
+
+const spin = {
+  '0%': {
+    transform: 'rotate(0deg)'
+  },
+  '100%': {
+    transform: 'rotate(360deg)'
+  }
+}
 
 const styles = StyleSheet.create({
   blogWrapper: {
@@ -76,5 +87,24 @@ const styles = StyleSheet.create({
     margin: '1rem',
     padding: '1rem 1rem 0',
     fontFamily: styleVars.font.Palanquin
+  },
+
+  loaderWrapper: {
+    width: '26em',
+    display: 'flex',
+    justifyContent: 'center',
+    padding: '2em'
+  },
+
+  loader: {
+    border: '10px solid #f3f3f3',
+    borderRadius: '50%',
+    borderTop: '10px solid #000',
+    width: '80px',
+    height: '80px',
+    animationName: spin,
+    animationDuration: '2s',
+    animationTimingFunction: 'linear',
+    animationIterationCount: 'infinite'
   }
 })
