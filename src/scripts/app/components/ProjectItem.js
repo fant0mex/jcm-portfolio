@@ -22,13 +22,11 @@ class ProjectItem extends Component {
         <div className={css(styles.overlay)}>
           <h2>{this.props.post.title}</h2>
         </div>
-        {this.state.isOverlayShown ? (
+        {this.state.isOverlayShown && (
           <VideoOverlay
             vimeoId={this.props.post.vimeoId}
             isOverlayShown={this.state.isOverlayShown}
           />
-        ) : (
-          <div />
         )}
       </div>
     )
