@@ -9,7 +9,7 @@ class ProjectItem extends Component {
     isOverlayShown: false
   }
 
-  toggleVideoOverlay () {
+  toggleVideoOverlay = () => {
     this.setState(prevState => ({
       isOverlayShown: !prevState.isOverlayShown
     }))
@@ -17,7 +17,7 @@ class ProjectItem extends Component {
 
   render () {
     return (
-      <div className={css(styles.itemWrapper)} onClick={this.toggleVideoOverlay.bind(this)}>
+      <div className={css(styles.itemWrapper)} onClick={this.toggleVideoOverlay}>
         <img src={this.props.post.featuredImage.url} />
         <div className={css(styles.overlay)}>
           <h2>{this.props.post.title}</h2>
