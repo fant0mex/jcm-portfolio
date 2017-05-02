@@ -11,7 +11,7 @@ class Header extends Component {
     isMenuOpen: false
   }
 
-  toggleMenu () {
+  toggleMenu = () => {
     this.setState(prevState => ({
       isMenuOpen: !prevState.isMenuOpen
     }))
