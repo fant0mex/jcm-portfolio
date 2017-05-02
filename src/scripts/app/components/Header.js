@@ -26,7 +26,7 @@ class Header extends Component {
           </NavLink>
         </div>
         <MediaQuery maxWidth={styleVars.width.md - 1}>
-          <MenuButton onClick={this.toggleMenu.bind(this)} />
+          <MenuButton toggleMenu={this.toggleMenu} />
           {this.state.isMenuOpen && (
             <nav className={css(styles.sideNav)}>
               <ul className={css(styles.list)}>

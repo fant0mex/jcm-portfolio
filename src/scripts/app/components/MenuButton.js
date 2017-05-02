@@ -1,8 +1,8 @@
 import React from 'react'
 import { StyleSheet, css } from 'aphrodite/no-important'
 
-const MenuButton = () => (
-  <button className={css(styles.btn)}>
+const MenuButton = props => (
+  <button onClick={() => props.toggleMenu} className={css(styles.btn)}>
     <div className={css(styles.bar)} />
     <div className={css(styles.bar)} />
     <div className={css(styles.bar)} />
