@@ -22,8 +22,8 @@ const styles = StyleSheet.create({
   },
 
   bar: {
-    width: '35px',
-    height: '5px',
+    width: '30px',
+    height: '4px',
     backgroundColor: '#000',
     margin: '6px auto'
   }

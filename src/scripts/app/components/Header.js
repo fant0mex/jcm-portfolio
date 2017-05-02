@@ -28,9 +28,9 @@ class Header extends Component {
         <MediaQuery maxWidth={styleVars.width.md - 1}>
           <MenuButton toggleMenu={this.toggleMenu} />
           {this.state.isMenuOpen && (
-            <nav className={css(styles.sideNav)}>
+            <nav onClick={this.toggleMenu} className={css(styles.sideNav)}>
               <ul className={css(styles.list)}>
-                <li><span className={css(styles.listItem)}>&times;</span></li>
+                <li className={css(styles.close)}><span className={css(styles.closeSpan)}>&times;</span></li>
                 <li><NavLink activeClassName={css(styles.active)} className={css(styles.listItem)} to='/reel'>Reel</NavLink></li>
                 <li><NavLink activeClassName={css(styles.active)} className={css(styles.listItem)} to='/projects'>Projects</NavLink></li>
                 <li><NavLink activeClassName={css(styles.active)} className={css(styles.listItem)} to='/photography'>Photography</NavLink></li>
@@ -79,16 +79,24 @@ const styles = StyleSheet.create({
   },
 
   sideNav: {
-    width: '300px',
+    width: '320px',
     height: '100%',
     position: 'fixed',
     zIndex: '1',
     top: '0',
     right: '0',
     background: '#111',
-    overflowX: 'hidden',
-    paddingTop: '1em',
-    transition: 'width 0.5s'
+    overflowX: 'hidden'
+  },
+
+  close: {
+    fontSize: '2em',
+    color: '#ddd',
+    textAlign: 'right'
+  },
+
+  closeSpan: {
+    cursor: 'pointer'
   },
 
   nav: {
