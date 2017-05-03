@@ -72,27 +72,29 @@ const styles = StyleSheet.create({
   },
 
   logo: {
-    width: '20em',
-    [styleVars.media.md]: {
+    width: '32em',
+    [styleVars.media.lg]: {
       width: '25em'
     }
   },
 
   sideNav: {
-    width: '400px',
+    width: '60%',
     height: '100%',
     position: 'fixed',
     zIndex: '1',
     top: '0',
     right: '0',
     background: '#111',
-    overflowX: 'hidden'
+    overflowX: 'hidden',
+    fontSize: '2em'
   },
 
   close: {
     fontSize: '2em',
     color: '#ddd',
-    textAlign: 'right'
+    textAlign: 'right',
+    marginRight: '0.5em'
   },
 
   closeSpan: {

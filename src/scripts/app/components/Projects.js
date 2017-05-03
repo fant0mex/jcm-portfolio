@@ -22,7 +22,9 @@ export default Projects
 
 const styles = StyleSheet.create({
   projectsWrapper: {
-    padding: '1em'
+    padding: '1em',
+    maxWidth: '1400px',
+    margin: 'auto'
   },
 
   projectList: {
