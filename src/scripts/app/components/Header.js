@@ -25,7 +25,7 @@ class Header extends Component {
             <img src={Logo} />
           </NavLink>
         </div>
-        <MediaQuery maxWidth={styleVars.width.md - 1}>
+        <MediaQuery maxWidth={styleVars.width.lg - 1}>
           <MenuButton toggleMenu={this.toggleMenu} />
           {this.state.isMenuOpen && (
             <nav onClick={this.toggleMenu} className={css(styles.sideNav)}>
@@ -40,7 +40,7 @@ class Header extends Component {
             </nav>
           )}
         </MediaQuery>
-        <MediaQuery minWidth={styleVars.width.md}>
+        <MediaQuery minWidth={styleVars.width.lg}>
           <nav className={css(styles.nav)}>
             <ul className={css(styles.list)}>
               <li><NavLink activeClassName={css(styles.active)} className={css(styles.listItem)} to='/reel'>Reel</NavLink></li>
@@ -72,14 +72,14 @@ const styles = StyleSheet.create({
   },
 
   logo: {
-    width: '16em',
+    width: '20em',
     [styleVars.media.md]: {
       width: '25em'
     }
   },
 
   sideNav: {
-    width: '320px',
+    width: '400px',
     height: '100%',
     position: 'fixed',
     zIndex: '1',
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     textTransform: 'lowercase',
     textAlign: 'center',
     fontSize: '1.2em',
-    [styleVars.media.md]: {
+    [styleVars.media.lg]: {
       flexDirection: 'row',
       paddingBottom: '1em'
     }
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
     margin: '0 0.5em',
     padding: '0 0.5em',
     color: '#ddd',
-    [styleVars.media.md]: {
+    [styleVars.media.lg]: {
       color: '#000'
     }
   },
