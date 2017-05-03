@@ -3,6 +3,7 @@ import {
   Route,
   Switch
 } from 'react-router-dom'
+import Home from 'app/components/Home'
 import Blog from 'app/components/Blog'
 import BlogPost from 'app/components/BlogPost'
 import Projects from 'app/components/Projects'
@@ -37,12 +38,6 @@ const Routes = props => {
     </Switch>
   )
 }
-
-const Home = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
-)
 
 const Reel = () => (
   <div>
