@@ -13,18 +13,20 @@ export default MenuButton
 
 const styles = StyleSheet.create({
   btn: {
-    width: '50px',
-    height: '45px',
+    width: '70px',
+    height: '60px',
     background: '#fff',
     cursor: 'pointer',
     margin: 'auto',
-    border: 'none'
+    border: 'none',
+    marginTop: '1em',
+    marginRight: '4em'
   },
 
   bar: {
-    width: '30px',
-    height: '4px',
+    width: '45px',
+    height: '5px',
     backgroundColor: '#000',
-    margin: '6px auto'
+    margin: '8px auto'
   }
 })
