@@ -72,22 +72,21 @@ const styles = StyleSheet.create({
   },
 
   logo: {
-    width: '32em',
+    width: '17em',
     [styleVars.media.lg]: {
       width: '25em'
     }
   },
 
   sideNav: {
-    width: '60%',
+    width: '360px',
     height: '100%',
     position: 'fixed',
     zIndex: '1',
     top: '0',
     right: '0',
     background: '#111',
-    overflowX: 'hidden',
-    fontSize: '2em'
+    overflowX: 'hidden'
   },
 
   close: {
