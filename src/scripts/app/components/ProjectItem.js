@@ -43,13 +43,12 @@ const styles = StyleSheet.create({
   itemWrapper: {
     position: 'relative',
     maxWidth: '95%',
-    margin: '1em auto',
+    margin: '0.2em 0.4em',
     [styleVars.media.sm]: {
-      maxWidth: '85%'
+      maxWidth: '75%'
     },
     [styleVars.media.lg]: {
-      maxWidth: '28em',
-      margin: '1em'
+      maxWidth: '30em'
     },
     ':hover div': {
       visibility: 'visible',
