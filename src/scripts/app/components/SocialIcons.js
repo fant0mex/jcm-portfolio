@@ -5,8 +5,16 @@ const SocialIcons = props => {
   return (
     <div className={css(styles.wrapper)}>
       <ul className={css(styles.list)}>
-        <li className={css(styles.listItem)}><a href='https://www.instagram.com/Jamesm402/' target='_blank'>Instagram</a></li>
-        <li className={css(styles.listItem)}><a href='' target='_blank'>Vimeo</a></li>
+        <li className={css(styles.listItem)}>
+          <a href='https://www.instagram.com/Jamesm402/' target='_blank'>
+            <img className={css(styles.icon)} src='src/assets/img/instagram.png' />
+          </a>
+        </li>
+        <li className={css(styles.listItem)}>
+          <a href='' target='_blank'>
+            <img className={css(styles.icon)} src='src/assets/img/vimeo.png' />
+          </a>
+        </li>
       </ul>
     </div>
   )
@@ -28,5 +36,10 @@ const styles = StyleSheet.create({
 
   listItem: {
     margin: '0 0.5em'
+  },
+
+  icon: {
+    width: '45px',
+    height: '45px'
   }
 })
