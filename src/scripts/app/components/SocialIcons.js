@@ -1,5 +1,7 @@
 import React from 'react'
 import { StyleSheet, css } from 'aphrodite/no-important'
+import Instagram from 'assets/img/instagram.png'
+import Vimeo from 'assets/img/vimeo.png'
 
 const SocialIcons = props => {
   return (
@@ -7,12 +9,12 @@ const SocialIcons = props => {
       <ul className={css(styles.list)}>
         <li className={css(styles.listItem)}>
           <a href='https://www.instagram.com/Jamesm402/' target='_blank'>
-            <img className={css(styles.icon)} src='src/assets/img/instagram.png' />
+            <img className={css(styles.icon)} src={Instagram} />
           </a>
         </li>
         <li className={css(styles.listItem)}>
           <a href='' target='_blank'>
-            <img className={css(styles.icon)} src='src/assets/img/vimeo.png' />
+            <img className={css(styles.icon)} src={Vimeo} />
           </a>
         </li>
       </ul>
