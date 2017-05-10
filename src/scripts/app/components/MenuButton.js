@@ -20,13 +20,13 @@ const styles = StyleSheet.create({
     margin: 'auto',
     border: 'none',
     marginTop: '1em',
-    marginRight: '4em'
+    marginRight: '0.5em'
   },
 
   bar: {
-    width: '45px',
-    height: '5px',
+    width: '30px',
+    height: '3px',
     backgroundColor: '#000',
-    margin: '8px auto'
+    margin: '6px auto'
   }
 })
