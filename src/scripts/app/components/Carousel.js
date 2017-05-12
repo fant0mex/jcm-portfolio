@@ -5,24 +5,37 @@ import fakeProjects from 'data/fakeProjects'
 class Carousel extends Component {
   state = {
     currentImg: 0,
-    arrLength: fakeProjects.length
+    arrLength: fakeProjects.length,
+    imgContainerHeight: 0
   }
 
   componentDidMount () {
-    setInterval(this.nextSlide, 3000)
+    const slideTimer = setInterval(this.nextSlide, 3000)
+    this.setState({ slideTimer })
+    setTimeout(this.setImgContainerHeight, 50)
+  }
+
+  componentWillUnmount () {
+    clearInterval(this.state.slideTimer)
+  }
+
+  setImgContainerHeight = () => {
+    this.setState({ imgContainerHeight: this.refs.img.height })
   }
 
   nextSlide = () => {
-    this.state.currentImg < this.state.arrLength
+    this.state.currentImg < this.state.arrLength - 1
     ? this.setState({ currentImg: this.state.currentImg + 1 })
     : this.setState({ currentImg: 0 })
   }
 
   render () {
     return (
-      <div className={css(styles.wrapper)}>
+      <div style={{height: this.state.imgContainerHeight}} className={css(styles.wrapper)}>
         {fakeProjects.map((item, i) => (
-          <img key={item.slug}
+          <img
+            ref='img'
+            key={item.slug}
             style={i === this.state.currentImg ? show : null}
             className={css(styles.slide)}
             src={item.featuredImage.url}
@@ -43,7 +56,7 @@ const show = {
 const styles = StyleSheet.create({
   wrapper: {
     maxWidth: '1200px',
-    minHeight: '30em',
+    height: '22em',
     margin: 'auto',
     position: 'relative'
   },
