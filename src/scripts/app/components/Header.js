@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     width: '360px',
     height: '100%',
     position: 'fixed',
-    zIndex: '1',
+    zIndex: '3',
     top: '0',
     right: '0',
     background: '#111',
