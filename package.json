@@ -24,6 +24,7 @@
     "prop-types": "^15.5.8",
     "react": "^15.5.3",
     "react-dom": "^15.5.3",
+    "react-masonry-component": "^5.0.5",
     "react-responsive": "^1.2.10",
     "react-router-dom": "^4.0.0",
     "standard": "^10.0.1",
