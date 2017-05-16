@@ -1,51 +1,41 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Masonry from 'react-masonry-component'
 import { StyleSheet, css } from 'aphrodite/no-important'
+import styleVars from 'styles/variables'
+import fakeProjects from 'data/fakeProjects'
 
-class Photography extends Component {
-  render () {
-    return (
-      <div className={css(styles.wrapper)}>
-        <Masonry>
-          <div className={css(styles.red)} />
-          <div className={css(styles.blue)} />
-          <div className={css(styles.yellow)} />
-          <div className={css(styles.green)} />
-        </Masonry>
-      </div>
-    )
-  }
-}
+const Photography = props => (
+  <div className={css(styles.wrapper)}>
+    <Masonry className={css(styles.grid)}>
+      {fakeProjects.map(item => (
+        <div key={item.slug} className={css(styles.gridItem)}>
+          <img src={item.featuredImage.url} />
+        </div>
+      ))}
+    </Masonry>
+  </div>
+)
 
 export default Photography
 
 const styles = StyleSheet.create({
   wrapper: {
     maxWidth: '1200px',
-    padding: '1em'
+    padding: '1em',
+    margin: 'auto'
   },
 
-  red: {
-    backgroundColor: 'red',
-    width: '300px',
-    height: '300px'
+  grid: {
+    margin: 'auto'
   },
 
-  blue: {
-    backgroundColor: 'blue',
-    width: '300px',
-    height: '500px'
-  },
-
-  yellow: {
-    backgroundColor: 'yellow',
-    width: '450px',
-    height: '200px'
-  },
-
-  green: {
-    backgroundColor: 'green',
-    width: '300px',
-    height: '300px'
+  gridItem: {
+    padding: '0.175em',
+    [styleVars.media.sm]: {
+      maxWidth: '50%'
+    },
+    [styleVars.media.lg]: {
+      maxWidth: '33.333%'
+    }
   }
 })
