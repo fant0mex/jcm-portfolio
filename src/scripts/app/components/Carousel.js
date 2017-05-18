@@ -1,43 +1,47 @@
 import React, { Component } from 'react'
 import { StyleSheet, css } from 'aphrodite/no-important'
 import fakeProjects from 'data/fakeProjects'
+import classNames from 'classnames'
 
 class Carousel extends Component {
   state = {
     currentImg: 0,
     arrLength: fakeProjects.length,
-    imgContainerHeight: 0
+    cssClasses: classNames(css(styles.slide), css(styles.show))
   }
 
   componentDidMount () {
     const slideTimer = setInterval(this.nextSlide, 3000)
     this.setState({ slideTimer })
-    setTimeout(this.setImgContainerHeight, 50)
   }
 
   componentWillUnmount () {
     clearInterval(this.state.slideTimer)
   }
 
-  setImgContainerHeight = () => {
-    this.setState({ imgContainerHeight: this.refs.img.height })
+  addTransition = () => {
+    setTimeout(() => {
+      this.setState({
+        cssClasses: classNames(css(styles.slide), css(styles.show))
+      })
+    }, 20)
   }
 
   nextSlide = () => {
+    this.setState({ cssClasses: classNames(css(styles.slide)) })
     this.state.currentImg < this.state.arrLength - 1
-    ? this.setState({ currentImg: this.state.currentImg + 1 })
-    : this.setState({ currentImg: 0 })
+    ? (this.setState({ currentImg: this.state.currentImg + 1 }), this.addTransition())
+    : (this.setState({ currentImg: 0 }), this.addTransition())
   }
 
   render () {
     return (
-      <div style={{height: this.state.imgContainerHeight}} className={css(styles.wrapper)}>
+      <div className={css(styles.wrapper)}>
         {fakeProjects.map((item, i) => (
           <img
-            ref='img'
             key={item.slug}
             style={i === this.state.currentImg ? show : null}
-            className={css(styles.slide)}
+            className={this.state.cssClasses}
             src={item.featuredImage.url}
           />
         ))}
@@ -49,25 +53,24 @@ class Carousel extends Component {
 export default Carousel
 
 const show = {
-  opacity: '1',
-  zIndex: '2'
+  display: 'block'
 }
 
 const styles = StyleSheet.create({
   wrapper: {
     maxWidth: '1200px',
-    height: '22em',
     margin: 'auto',
     position: 'relative'
   },
 
   slide: {
-    position: 'absolute',
-    left: '0',
-    top: '0',
+    display: 'none',
     width: '100%',
     opacity: '0',
-    zIndex: '1',
     transition: 'opacity 0.5s'
+  },
+
+  show: {
+    opacity: '1'
   }
 })
