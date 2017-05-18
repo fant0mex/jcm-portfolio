@@ -1,7 +1,7 @@
 export default [
   {
     featuredImage: {
-      url: 'https://static.pexels.com/photos/410092/pexels-photo-410092.jpeg'
+      url: 'https://static.pexels.com/photos/407580/pexels-photo-407580.jpeg'
     },
     slug: 'fake-post-one',
     title: 'A Fake Project',
