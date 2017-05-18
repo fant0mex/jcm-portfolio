@@ -6,6 +6,7 @@ import {
 import Home from 'app/components/Home'
 import Blog from 'app/components/Blog'
 import BlogPost from 'app/components/BlogPost'
+import Photography from 'app/components/Photography'
 import Projects from 'app/components/Projects'
 import NotFound from 'app/components/NotFound'
 
@@ -42,12 +43,6 @@ const Routes = props => {
 const Reel = () => (
   <div>
     <h2>Reel</h2>
-  </div>
-)
-
-const Photography = () => (
-  <div>
-    <h2>Photography</h2>
   </div>
 )
 
