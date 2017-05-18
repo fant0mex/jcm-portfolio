@@ -58,9 +58,8 @@ const show = {
 
 const styles = StyleSheet.create({
   wrapper: {
-    maxWidth: '1200px',
-    margin: 'auto',
-    position: 'relative'
+    maxWidth: '1000px',
+    margin: 'auto'
   },
 
   slide: {
