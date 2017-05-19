@@ -2,6 +2,7 @@ import React from 'react'
 import { StyleSheet, css } from 'aphrodite/no-important'
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
 import 'styles/carousel.css'
+import styleVars from 'styles/variables.js'
 
 const Carousel = props => (
   <div className={css(styles.wrapper)}>
@@ -11,7 +12,6 @@ const Carousel = props => (
       transitionLeaveTimeout={2900}>
       <img
         className={css(styles.img)}
-        style={{}}
         src={props.featuredImage}
         key={props.featuredImage}
       />
@@ -23,13 +23,40 @@ export default Carousel
 
 const styles = StyleSheet.create({
   wrapper: {
-    position: 'relative'
+    position: 'relative',
+    maxWidth: 1400,
+    margin: 'auto',
+    height: 260,
+    [styleVars.media.sm]: {
+      height: 340
+    },
+    [styleVars.media.md]: {
+      height: 380
+    },
+    [styleVars.media.lg]: {
+      height: 420
+    },
+    [styleVars.media.xl]: {
+      height: 460
+    }
   },
+
   img: {
     position: 'absolute',
-    top: 0,
-    left: 'calc(50% - 400px)',
-    width: 800,
-    height: 600
+    width: '100%',
+    objectFit: 'cover',
+    height: 260,
+    [styleVars.media.sm]: {
+      height: 340
+    },
+    [styleVars.media.md]: {
+      height: 380
+    },
+    [styleVars.media.lg]: {
+      height: 420
+    },
+    [styleVars.media.xl]: {
+      height: 460
+    }
   }
 })
