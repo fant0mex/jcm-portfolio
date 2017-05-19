@@ -26,7 +26,6 @@ export default SocialIcons
 
 const styles = StyleSheet.create({
   wrapper: {
-    maxWidth: '1200px',
     margin: '1em auto'
   },
 
