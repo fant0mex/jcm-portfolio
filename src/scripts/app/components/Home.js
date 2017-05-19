@@ -35,6 +35,6 @@ export default Home
 
 const styles = StyleSheet.create({
   wrapper: {
-    padding: '1em'
+    padding: '1em 0'
   }
 })
