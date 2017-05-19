@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import Routes from 'app/routes'
 import Header from 'app/components/Header'
+import Footer from 'app/components/Footer'
 import { Page, Main } from 'app/widgets/layout'
 import { getAllBlogPosts, getBlogPost } from 'lib/contentful'
 
@@ -33,6 +34,7 @@ class App extends Component {
           <Main>
             <Header />
             <Routes {...propsToPass} />
+            <Footer />
           </Main>
         </Page>
       </Router>

@@ -9,11 +9,12 @@ class Home extends Component {
   }
 
   componentDidMount () {
-    setInterval(this.incrementSlider, 6000)
+    const slider = setInterval(this.incrementSlider, 6000)
+    this.setState({ slider })
   }
 
   componentWillUnmount () {
-    clearInterval(this.incrementSlider)
+    clearInterval(this.state.slider)
   }
 
   incrementSlider = () => {
