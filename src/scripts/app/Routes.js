@@ -4,6 +4,7 @@ import {
   Switch
 } from 'react-router-dom'
 import Home from 'app/components/Home'
+import Reel from 'app/components/Reel'
 import Blog from 'app/components/Blog'
 import BlogPost from 'app/components/BlogPost'
 import Photography from 'app/components/Photography'
@@ -39,12 +40,6 @@ const Routes = props => {
     </Switch>
   )
 }
-
-const Reel = () => (
-  <div>
-    <h2>Reel</h2>
-  </div>
-)
 
 const Contact = () => (
   <div>
