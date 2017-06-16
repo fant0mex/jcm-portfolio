@@ -9,6 +9,7 @@ import Blog from 'app/components/Blog'
 import BlogPost from 'app/components/BlogPost'
 import Photography from 'app/components/Photography'
 import Projects from 'app/components/Projects'
+import Contact from 'app/components/Contact'
 import NotFound from 'app/components/NotFound'
 
 const renderMergedProps = (component, ...rest) => {
@@ -40,11 +41,5 @@ const Routes = props => {
     </Switch>
   )
 }
-
-const Contact = () => (
-  <div>
-    <h2>Contact</h2>
-  </div>
-)
 
 export default Routes
