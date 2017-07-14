@@ -24,7 +24,7 @@ export default Carousel
 const styles = StyleSheet.create({
   wrapper: {
     position: 'relative',
-    maxWidth: 1400,
+    width: '100%',
     margin: 'auto',
     height: 260,
     [styleVars.media.sm]: {
