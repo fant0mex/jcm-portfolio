@@ -3,7 +3,6 @@ import BlogSnippet from 'app/components/BlogSnippet'
 import InstagramWidget from 'app/components/InstagramWidget'
 import { StyleSheet, css } from 'aphrodite/no-important'
 import styleVars from 'styles/variables'
-import fakeBlogPosts from 'data/fakeBlogPosts'
 
 class Blog extends Component {
   state = {
@@ -14,6 +13,7 @@ class Blog extends Component {
 
   componentDidMount () {
     this.getInstagram()
+    this.props.getBlogPosts()
   }
 
   getInstagram = () => {
@@ -36,11 +36,12 @@ class Blog extends Component {
   }
 
   render () {
+    const posts = this.props.appState.posts
     const { instagramFeed, profilePicUrl, loading } = this.state
     return (
       <div className={css(styles.blogWrapper)}>
         <div className={css(styles.blogList)}>
-          {fakeBlogPosts.map(blogSnippet => (
+          {posts.map(blogSnippet => (
             <BlogSnippet key={blogSnippet.slug} post={blogSnippet} />
           ))}
         </div>

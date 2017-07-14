@@ -2,15 +2,18 @@ import React, { Component } from 'react'
 import ProjectItem from 'app/components/ProjectItem'
 import { StyleSheet, css } from 'aphrodite/no-important'
 import styleVars from 'styles/variables'
-import fakeProjects from 'data/fakeProjects'
 
 class Projects extends Component {
+  componentDidMount () {
+    this.props.getProjectPosts()
+  }
+
   render () {
     return (
       <div className={css(styles.projectsWrapper)}>
         <div className={css(styles.projectList)}>
-          {fakeProjects.map(item => (
-            <ProjectItem key={item.slug} post={item} />
+          {this.props.appState.projectPosts.map(item => (
+            <ProjectItem key={item.title} post={item} />
           ))}
         </div>
       </div>
