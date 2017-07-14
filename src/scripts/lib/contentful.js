@@ -23,3 +23,17 @@ export const getBlogPost = (postSlug) => {
     .then(response => response.data)
     .then(generateItemObject)
 }
+
+export const getAllProjects = () => {
+  const params = { content_type: 'projectPost', include: 10 }
+  return contenfulAPI.get('/', {params})
+    .then(response => response.data)
+    .then(generateItemObjectArray)
+}
+
+export const getAllPhotography = () => {
+  const params = { content_type: 'photography', include: 10 }
+  return contenfulAPI.get('/', {params})
+    .then(response => response.data)
+    .then(generateItemObjectArray)
+}

@@ -4,12 +4,19 @@ import Routes from 'app/routes'
 import Header from 'app/components/Header'
 import Footer from 'app/components/Footer'
 import { Page, Main } from 'app/widgets/layout'
-import { getAllBlogPosts, getBlogPost } from 'lib/contentful'
+import {
+  getAllBlogPosts,
+  getBlogPost,
+  getAllProjects,
+  getAllPhotography
+} from 'lib/contentful'
 
 class App extends Component {
   state = {
     posts: [],
-    post: {}
+    post: {},
+    projectPosts: [],
+    photographyPosts: []
   }
 
   getBlogPosts = page => {
@@ -22,11 +29,25 @@ class App extends Component {
     getBlogPost(...args).then(post => this.setState({post})).catch(() => {})
   }
 
+  getProjectPosts = page => {
+    getAllProjects(page).then(data => {
+      this.setState({projectPosts: data})
+    })
+  }
+
+  getPhotographyPosts = page => {
+    getAllPhotography(page).then(data => {
+      this.setState({photographyPosts: data})
+    })
+  }
+
   render () {
     const propsToPass = {
       appState: this.state,
       getBlogPosts: this.getBlogPosts,
-      getSinglePost: this.getSinglePost
+      getSinglePost: this.getSinglePost,
+      getProjectPosts: this.getProjectPosts,
+      getPhotographyPosts: this.getPhotographyPosts
     }
     return (
       <Router>
