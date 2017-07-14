@@ -102,7 +102,8 @@ const styles = StyleSheet.create({
 
   nav: {
     [styleVars.media.lg]: {
-      width: '50%'
+      width: '50%',
+      maxWidth: 670
     }
   },
 
