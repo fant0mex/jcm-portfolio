@@ -17,7 +17,7 @@ class Blog extends Component {
   }
 
   getInstagram = () => {
-    window.fetch('https://crossorigin.me/https://www.instagram.com/Jamesm402/media/', {
+    window.fetch('https://crossorigin.me/https://www.instagram.com/jamesmdop/media/', {
       method: 'get'
     }).then(response => {
       response.json().then(data => {
