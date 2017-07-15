@@ -5,7 +5,9 @@ import { StyleSheet, css } from 'aphrodite/no-important'
 const BlogSnippet = props => (
   <div>
     <div className={css(styles.imgWrapper)}>
-      <img src={props.post.featuredImage.url} />
+      {props.post.images.map(i => (
+        <img key={i.url} src={i.url} />
+      ))}
       <div>{props.post.category && props.post.category.title}</div>
     </div>
     <div>
