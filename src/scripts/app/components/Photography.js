@@ -14,7 +14,7 @@ class Photography extends Component {
         <Masonry className={css(styles.grid)}>
           {this.props.appState.photographyPosts.map(item => (
             <div key={item.title} className={css(styles.gridItem)}>
-              <img src={item.featuredImage.url} />
+              <img src={item.photo.url} />
             </div>
           ))}
         </Masonry>
