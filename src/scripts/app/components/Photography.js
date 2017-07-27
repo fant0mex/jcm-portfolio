@@ -1,20 +1,27 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Masonry from 'react-masonry-component'
 import { StyleSheet, css } from 'aphrodite/no-important'
 import styleVars from 'styles/variables'
-import fakeProjects from 'data/fakeProjects'
 
-const Photography = props => (
-  <div className={css(styles.wrapper)}>
-    <Masonry className={css(styles.grid)}>
-      {fakeProjects.map(item => (
-        <div key={item.slug} className={css(styles.gridItem)}>
-          <img src={item.featuredImage.url} />
-        </div>
-      ))}
-    </Masonry>
-  </div>
-)
+class Photography extends Component {
+  componentDidMount () {
+    this.props.getPhotographyPosts()
+  }
+
+  render () {
+    return (
+      <div className={css(styles.wrapper)}>
+        <Masonry className={css(styles.grid)}>
+          {this.props.appState.photographyPosts.map(item => (
+            <div key={item.title} className={css(styles.gridItem)}>
+              <img src={item.photo.url} />
+            </div>
+          ))}
+        </Masonry>
+      </div>
+    )
+  }
+}
 
 export default Photography
 

@@ -32,8 +32,8 @@ const Routes = props => {
     <Switch>
       <Route exact path='/' component={Home} />
       <Route path='/reel' component={Reel} />
-      <Route path='/projects' component={Projects} />
-      <Route path='/photography' component={Photography} />
+      <PropsRoute path='/projects' component={Projects} {...props} />
+      <PropsRoute path='/photography' component={Photography} {...props} />
       <PropsRoute exact path='/blog' component={Blog} {...props} />
       <PropsRoute path='/blog/:slug' component={BlogPost} {...props} />
       <Route path='/contact' component={Contact} />
