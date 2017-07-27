@@ -28,7 +28,6 @@ const styles = StyleSheet.create({
   imgWrapper: {
     padding: '1em'
   },
-
   postTitle: {
     margin: '1em 0',
     fontSize: '1.2em',
