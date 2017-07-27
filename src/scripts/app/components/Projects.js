@@ -29,7 +29,6 @@ const styles = StyleSheet.create({
     maxWidth: '1400px',
     margin: 'auto'
   },
-
   projectList: {
     display: 'flex',
     flexFlow: 'column wrap',
