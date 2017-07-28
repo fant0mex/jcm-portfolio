@@ -8,7 +8,8 @@ import {
   getAllBlogPosts,
   getBlogPost,
   getAllProjects,
-  getAllPhotography
+  getAllPhotography,
+  getAllCarouselImages
 } from 'lib/contentful'
 
 class App extends Component {
@@ -16,7 +17,8 @@ class App extends Component {
     posts: [],
     post: {},
     projectPosts: [],
-    photographyPosts: []
+    photographyPosts: [],
+    carouselImages: []
   }
 
   getBlogPosts = page => {
@@ -41,13 +43,20 @@ class App extends Component {
     })
   }
 
+  getCarouselImages = page => {
+    getAllCarouselImages(page).then(data => {
+      this.setState({carouselImages: data})
+    })
+  }
+
   render () {
     const propsToPass = {
       appState: this.state,
       getBlogPosts: this.getBlogPosts,
       getSinglePost: this.getSinglePost,
       getProjectPosts: this.getProjectPosts,
-      getPhotographyPosts: this.getPhotographyPosts
+      getPhotographyPosts: this.getPhotographyPosts,
+      getCarouselImages: this.getCarouselImages
     }
     return (
       <Router>

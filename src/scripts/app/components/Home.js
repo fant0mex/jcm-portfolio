@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Carousel from 'app/components/Carousel'
 import { StyleSheet, css } from 'aphrodite/no-important'
-import fakeProjects from 'data/fakeProjects'
 
 class Home extends Component {
   state = {
@@ -9,6 +8,7 @@ class Home extends Component {
   }
 
   componentDidMount () {
+    this.props.getCarouselImages()
     const slider = setInterval(this.incrementSlider, 6000)
     this.setState({ slider })
   }
@@ -18,15 +18,19 @@ class Home extends Component {
   }
 
   incrementSlider = () => {
+    const imagesArr = this.props.appState.carouselImages[0].images
     const { currentImg } = this.state
-    currentImg < fakeProjects.length - 1 ? this.setState({ currentImg: currentImg + 1 }) : this.setState({ currentImg: 0 })
+    currentImg < imagesArr.length - 1 ? this.setState({ currentImg: currentImg + 1 }) : this.setState({ currentImg: 0 })
   }
 
   render () {
     const { currentImg } = this.state
     return (
       <div className={css(styles.wrapper)}>
-        <Carousel featuredImage={fakeProjects[currentImg].featuredImage.url} />
+        {this.props.appState.carouselImages.length > 0 && (
+          <Carousel featuredImage={this.props.appState.carouselImages[0].images[currentImg]} />
+          )
+        }
       </div>
     )
   }
