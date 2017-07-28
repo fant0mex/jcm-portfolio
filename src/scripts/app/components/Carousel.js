@@ -12,8 +12,8 @@ const Carousel = props => (
       transitionLeaveTimeout={2900}>
       <img
         className={css(styles.img)}
-        src={props.featuredImage}
-        key={props.featuredImage}
+        src={props.featuredImage.url}
+        key={props.featuredImage.url}
       />
     </CSSTransitionGroup>
   </div>

@@ -30,7 +30,7 @@ const PropsRoute = ({ component, ...rest }) => {
 const Routes = props => {
   return (
     <Switch>
-      <Route exact path='/' component={Home} />
+      <PropsRoute exact path='/' component={Home} {...props} />
       <Route path='/reel' component={Reel} />
       <PropsRoute path='/projects' component={Projects} {...props} />
       <PropsRoute path='/photography' component={Photography} {...props} />

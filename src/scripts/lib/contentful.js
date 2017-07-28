@@ -37,3 +37,10 @@ export const getAllPhotography = () => {
     .then(response => response.data)
     .then(generateItemObjectArray)
 }
+
+export const getAllCarouselImages = () => {
+  const params = { content_type: 'carouselImages', include: 10 }
+  return contenfulAPI.get('/', {params})
+    .then(response => response.data)
+    .then(generateItemObjectArray)
+}
