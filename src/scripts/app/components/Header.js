@@ -86,7 +86,8 @@ const styles = StyleSheet.create({
     top: '0',
     right: '0',
     background: '#111',
-    overflowX: 'hidden'
+    overflowX: 'hidden',
+    fontSize: '1.4em'
   },
 
   close: {
