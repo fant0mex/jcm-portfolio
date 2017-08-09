@@ -17,9 +17,8 @@ class Blog extends Component {
   }
 
   getInstagram = () => {
-    window.fetch('https://crossorigin.me/https://www.instagram.com/jamesmdop/media/', {
-      method: 'get'
-    }).then(response => {
+    window.fetch('https://cors-anywhere.herokuapp.com/https://www.instagram.com/jamesmdop/media/')
+    .then(response => {
       response.json().then(data => {
         const profilePicUrl = data.items[0].user.profile_picture.replace('s150x150/', '')
         const instagramFeed = data.items.map(item => ({
@@ -33,6 +32,7 @@ class Blog extends Component {
         })
       })
     })
+    .catch(err => console.log('Whoops', err))
   }
 
   render () {
