@@ -70,6 +70,7 @@ const spin = {
 
 const styles = StyleSheet.create({
   blogWrapper: {
+    maxWidth: 1700,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
@@ -83,7 +84,7 @@ const styles = StyleSheet.create({
   },
 
   blogList: {
-    maxWidth: '48em',
+    maxWidth: '67%',
     backgroundColor: '#e6e6e6',
     margin: '1rem',
     padding: '1rem 1rem 0',
