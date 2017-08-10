@@ -48,7 +48,10 @@ const styles = StyleSheet.create({
       maxWidth: '75%'
     },
     [styleVars.media.lg]: {
-      maxWidth: '30em'
+      maxWidth: '48%'
+    },
+    [styleVars.media.xl]: {
+      maxWidth: '32%'
     },
     ':hover div': {
       visibility: 'visible',

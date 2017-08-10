@@ -26,7 +26,8 @@ BlogSnippet.propTypes = {
 
 const styles = StyleSheet.create({
   imgWrapper: {
-    padding: '1em'
+    padding: '1em',
+    textAlign: 'center'
   },
   postTitle: {
     margin: '1em 0',
