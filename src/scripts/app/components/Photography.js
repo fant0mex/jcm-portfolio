@@ -27,8 +27,8 @@ export default Photography
 
 const styles = StyleSheet.create({
   wrapper: {
-    maxWidth: '1200px',
-    padding: '1em',
+    maxWidth: '1700px',
+    padding: '1em 2em',
     margin: 'auto'
   },
 

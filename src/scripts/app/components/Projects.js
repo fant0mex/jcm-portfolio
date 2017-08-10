@@ -26,7 +26,7 @@ export default Projects
 const styles = StyleSheet.create({
   projectsWrapper: {
     padding: '1em',
-    maxWidth: '1400px',
+    maxWidth: '1700px',
     margin: 'auto'
   },
   projectList: {
