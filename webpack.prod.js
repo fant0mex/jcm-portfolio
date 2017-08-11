@@ -39,9 +39,6 @@ module.exports = {
     ]
   },
   devtool: 'source-map',
-  performance: {
-    hints: 'error'
-  },
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
