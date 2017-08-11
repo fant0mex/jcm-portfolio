@@ -1,22 +1,28 @@
-import React from 'react'
+import React, { Component } from 'react'
+import ReactMarkdown from 'react-markdown'
 import PropTypes from 'prop-types'
 import { StyleSheet, css } from 'aphrodite/no-important'
 
-const BlogSnippet = props => (
-  <div>
-    <div className={css(styles.imgWrapper)}>
-      {props.post.images.map(i => (
-        <img key={i.url} src={i.url} />
-      ))}
-      <div>{props.post.category && props.post.category.title}</div>
-    </div>
-    <div>
-      <h2 className={css(styles.postTitle)} >{props.post.title}</h2>
-      <p>{props.post.post}</p>
-    </div>
-    <hr />
-  </div>
-)
+class BlogSnippet extends Component {
+  render () {
+    const blogPost = this.props.post.post
+    return (
+      <div>
+        <div className={css(styles.imgWrapper)}>
+          {this.props.post.images.map(i => (
+            <img key={i.url} src={i.url} />
+          ))}
+          <div>{this.props.post.category && this.props.post.category.title}</div>
+        </div>
+        <div>
+          <h2 className={css(styles.postTitle)} >{this.props.post.title}</h2>
+          <ReactMarkdown source={blogPost} />
+        </div>
+        <hr />
+      </div>
+    )
+  }
+}
 
 export default BlogSnippet
 
@@ -31,7 +37,8 @@ const styles = StyleSheet.create({
   },
   postTitle: {
     margin: '1em 0',
-    fontSize: '1.2em',
+    fontWeight: 'bold',
+    fontSize: '1.5em',
     textAlign: 'center'
   }
 })
