@@ -42,7 +42,7 @@
   },
   "scripts": {
     "predeploy": "webpack --config=webpack.prod.js -p",
-    "deploy": "surge --project dist --domain jamescmorgan.surge.sh",
+    "deploy": "surge --project dist --domain www.jamescmorgan.com",
     "lint": "standard --fix",
     "start": "webpack-dashboard -- webpack-dev-server",
     "test": "jest"
