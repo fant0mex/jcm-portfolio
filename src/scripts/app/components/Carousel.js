@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
       height: 420
     },
     [styleVars.media.xl]: {
-      height: 520
+      height: 720
     }
   },
 
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
       height: 420
     },
     [styleVars.media.xl]: {
-      height: 520
+      height: 720
     }
   }
 })
