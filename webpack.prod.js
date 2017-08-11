@@ -41,7 +41,7 @@ module.exports = {
   devtool: 'source-map',
   performance: {
     hints: 'error',
-    maxEntrypointSize: 400000
+    maxEntrypointSize: 500000
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
