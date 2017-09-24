@@ -36,13 +36,14 @@ class Blog extends Component {
   }
 
   render () {
-    const posts = this.props.appState.posts
+    const posts = [].concat(this.props.appState.posts)
     const { instagramFeed, profilePicUrl, loading } = this.state
     return (
       <div className={css(styles.blogWrapper)}>
         <div className={css(styles.blogList)}>
-          {posts.map(blogSnippet => (
-            <BlogSnippet key={blogSnippet.slug} post={blogSnippet} />
+          {posts.sort((a, b) => a.date < b.date)
+            .map(blogSnippet => (
+              <BlogSnippet key={blogSnippet.slug} post={blogSnippet} />
           ))}
         </div>
         {loading ? (
