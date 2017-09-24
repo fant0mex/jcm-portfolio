@@ -9,7 +9,7 @@ class BlogSnippet extends Component {
     return (
       <div>
         <div className={css(styles.imgWrapper)}>
-          {this.props.post.images.map(i => (
+          {this.props.post.images && this.props.post.images.map(i => (
             <img key={i.url} src={i.url} />
           ))}
           <div>{this.props.post.category && this.props.post.category.title}</div>
