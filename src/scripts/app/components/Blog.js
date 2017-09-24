@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#e6e6e6',
     margin: '1rem',
     padding: '1rem 1rem 0',
-    fontFamily: styleVars.font.Palanquin
+    fontFamily: [styleVars.font.Palanquin]
   },
 
   loaderWrapper: {

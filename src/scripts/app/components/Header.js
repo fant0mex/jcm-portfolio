@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'space-between',
     padding: '0 1rem',
-    fontFamily: styleVars.font.Palanquin,
+    fontFamily: [styleVars.font.Palanquin],
     textTransform: 'lowercase',
     textAlign: 'center',
     fontSize: '1.2em',
