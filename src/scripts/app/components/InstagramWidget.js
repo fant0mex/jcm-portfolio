@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { StyleSheet, css } from 'aphrodite/no-important'
+import styleVars from 'styles/variables'
 
 const InstagramWidget = props => (
   <div className={css(styles.instaWidget)}>
@@ -41,7 +42,7 @@ const styles = StyleSheet.create({
     flexFlow: 'row nowrap',
     justifyContent: 'center',
     alignItems: 'center',
-    fontFamily: 'Palanquin',
+    fontFamily: [styleVars.font.Palanquin],
     textAlign: 'center',
     fontSize: '2.5em',
     textTransform: 'uppercase',
@@ -66,6 +67,8 @@ const styles = StyleSheet.create({
   },
 
   instaImg: {
-    width: '100%'
+    width: '100%',
+    height: '116px',
+    objectFit: 'cover'
   }
 })
