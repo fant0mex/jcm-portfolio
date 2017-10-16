@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
 
   overlay: {
     background: 'rgba(0, 0, 0, 0.6)',
+    cursor: 'pointer',
     visibility: 'hidden',
     opacity: '0',
     transition: 'visibility 0s linear 0.5s, opacity 0.3s linear',
