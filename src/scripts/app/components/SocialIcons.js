@@ -8,12 +8,12 @@ const SocialIcons = props => {
     <div className={css(styles.wrapper)}>
       <ul className={css(styles.list)}>
         <li className={css(styles.listItem)}>
-          <a href='https://www.instagram.com/Jamesm402/' target='_blank'>
+          <a href='https://www.instagram.com/Jamesmdop/' target='_blank'>
             <img className={css(styles.icon)} src={Instagram} />
           </a>
         </li>
         <li className={css(styles.listItem)}>
-          <a href='' target='_blank'>
+          <a href='https://vimeo.com/jamescmorgan' target='_blank'>
             <img className={css(styles.icon)} src={Vimeo} />
           </a>
         </li>
